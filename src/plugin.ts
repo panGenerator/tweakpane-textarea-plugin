@@ -19,7 +19,7 @@ export interface PluginInputParams extends BaseInputParams {
 // - converts `Ex` into `In` and holds it
 // - P is the type of the parsed parameters
 //
-export const TemplateInputPlugin: InputBindingPlugin<
+export const TweakpaneTextareaPlugin: InputBindingPlugin<
 	string,
 	string,
 	PluginInputParams

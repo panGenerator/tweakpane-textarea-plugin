@@ -33,14 +33,14 @@
 	.tp-txtrv_i {
 		font-family: var(--font-family);
 		background-color: var(--in-bg);
-    border-radius: var(--elm-br);
-    box-sizing: border-box;
-    color: var(--in-fg);
+		border-radius: var(--elm-br);
+		box-sizing: border-box;
+		color: var(--in-fg);
 		font-size: 0.9em;
 		padding: 0 4px;
-    //line-height: var(--bld-us);
-    min-width: 0;
-    width: 100%;
+		//line-height: var(--bld-us);
+		min-width: 0;
+		width: 100%;
 		border: none;
 		height: 100%;
 		resize: none;

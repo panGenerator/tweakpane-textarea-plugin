@@ -61,33 +61,33 @@ export class PluginView implements View {
 	// private refresh_(): void {
 	// 	const rawValue = this.value_.rawValue;
 
-		// this.textElem_.textContent = rawValue.toFixed(2);
+	// this.textElem_.textContent = rawValue.toFixed(2);
 
-		// while (this.dotElems_.length > 0) {
-		// 	const elem = this.dotElems_.shift();
-		// 	if (elem) {
-		// 		this.element.removeChild(elem);
-		// 	}
-		// }
+	// while (this.dotElems_.length > 0) {
+	// 	const elem = this.dotElems_.shift();
+	// 	if (elem) {
+	// 		this.element.removeChild(elem);
+	// 	}
+	// }
 
-		// const doc = this.element.ownerDocument;
-		// const dotCount = Math.floor(rawValue);
-		// for (let i = 0; i < dotCount; i++) {
-		// 	const dotElem = doc.createElement('div');
-		// 	dotElem.classList.add(className('dot'));
+	// const doc = this.element.ownerDocument;
+	// const dotCount = Math.floor(rawValue);
+	// for (let i = 0; i < dotCount; i++) {
+	// 	const dotElem = doc.createElement('div');
+	// 	dotElem.classList.add(className('dot'));
 
-		// 	if (i === dotCount - 1) {
-		// 		const fracElem = doc.createElement('div');
-		// 		fracElem.classList.add(className('frac'));
-		// 		const frac = rawValue - Math.floor(rawValue);
-		// 		fracElem.style.width = `${frac * 100}%`;
-		// 		fracElem.style.opacity = String(mapRange(frac, 0, 1, 1, 0.2));
-		// 		dotElem.appendChild(fracElem);
-		// 	}
+	// 	if (i === dotCount - 1) {
+	// 		const fracElem = doc.createElement('div');
+	// 		fracElem.classList.add(className('frac'));
+	// 		const frac = rawValue - Math.floor(rawValue);
+	// 		fracElem.style.width = `${frac * 100}%`;
+	// 		fracElem.style.opacity = String(mapRange(frac, 0, 1, 1, 0.2));
+	// 		dotElem.appendChild(fracElem);
+	// 	}
 
-		// 	this.dotElems_.push(dotElem);
-		// 	this.element.appendChild(dotElem);
-		// }
+	// 	this.dotElems_.push(dotElem);
+	// 	this.element.appendChild(dotElem);
+	// }
 	// }
 
 	// private onValueChange_() {

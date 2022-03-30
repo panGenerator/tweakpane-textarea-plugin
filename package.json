@@ -2,9 +2,9 @@
   "name": "tweakpane-textarea-plugin",
   "version": "0.0.2",
   "description": "Textarea plugin for Tweakpane",
-  "main": "dist/tweakpane-plugin-template.js",
+  "main": "dist/tweakpane-textarea-plugin.js",
   "types": "dist/types/index.d.ts",
-  "author": "cocopon",
+  "author": "panGenerator",
   "license": "MIT",
   "files": [
     "dist"
