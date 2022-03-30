@@ -1,7 +1,7 @@
 import {ClassName, mapRange, Value, View, ViewProps} from '@tweakpane/core';
 
 interface Config {
-	value: Value<number>;
+	value: Value<string>;
 	viewProps: ViewProps;
 }
 
@@ -12,9 +12,9 @@ const className = ClassName('tmp');
 // Custom view class should implement `View` interface
 export class PluginView implements View {
 	public readonly element: HTMLElement;
-	private value_: Value<number>;
-	private dotElems_: HTMLElement[] = [];
-	private textElem_: HTMLElement;
+	private value_: Value<string>;
+	//private textElem_: HTMLElement;
+	public readonly inputElement: HTMLTextAreaElement;
 
 	constructor(doc: Document, config: Config) {
 		// Create a root element for the plugin
@@ -29,9 +29,21 @@ export class PluginView implements View {
 		this.value_.emitter.on('change', this.onValueChange_.bind(this));
 
 		// Create child elements
-		this.textElem_ = doc.createElement('div');
-		this.textElem_.classList.add(className('text'));
-		this.element.appendChild(this.textElem_);
+		// this.textElem_ = doc.createElement('div');
+		// this.textElem_.classList.add(className('text'));
+		// this.element.appendChild(this.textElem_);
+		
+		const inputElem = doc.createElement('textarea');
+		inputElem.rows = 6;
+		inputElem.cols = 22;
+		inputElem.placeholder = "test..."
+		inputElem.classList.add(className('i'));
+		
+		//inputElem.addEventListener( "keyup", this.textChanged )
+		
+		//config.viewProps.bindDisabled(inputElem);
+		this.element.appendChild(inputElem);
+		this.inputElement = inputElem;
 
 		// Apply the initial value
 		this.refresh_();
@@ -41,37 +53,41 @@ export class PluginView implements View {
 			console.log('TODO: dispose view');
 		});
 	}
+	
+	// private textChanged( ev:KeyboardEvent ) : void {
+	// 	//console.log( "key event" )
+	// }
 
 	private refresh_(): void {
 		const rawValue = this.value_.rawValue;
 
-		this.textElem_.textContent = rawValue.toFixed(2);
+		// this.textElem_.textContent = rawValue.toFixed(2);
 
-		while (this.dotElems_.length > 0) {
-			const elem = this.dotElems_.shift();
-			if (elem) {
-				this.element.removeChild(elem);
-			}
-		}
+		// while (this.dotElems_.length > 0) {
+		// 	const elem = this.dotElems_.shift();
+		// 	if (elem) {
+		// 		this.element.removeChild(elem);
+		// 	}
+		// }
 
-		const doc = this.element.ownerDocument;
-		const dotCount = Math.floor(rawValue);
-		for (let i = 0; i < dotCount; i++) {
-			const dotElem = doc.createElement('div');
-			dotElem.classList.add(className('dot'));
+		// const doc = this.element.ownerDocument;
+		// const dotCount = Math.floor(rawValue);
+		// for (let i = 0; i < dotCount; i++) {
+		// 	const dotElem = doc.createElement('div');
+		// 	dotElem.classList.add(className('dot'));
 
-			if (i === dotCount - 1) {
-				const fracElem = doc.createElement('div');
-				fracElem.classList.add(className('frac'));
-				const frac = rawValue - Math.floor(rawValue);
-				fracElem.style.width = `${frac * 100}%`;
-				fracElem.style.opacity = String(mapRange(frac, 0, 1, 1, 0.2));
-				dotElem.appendChild(fracElem);
-			}
+		// 	if (i === dotCount - 1) {
+		// 		const fracElem = doc.createElement('div');
+		// 		fracElem.classList.add(className('frac'));
+		// 		const frac = rawValue - Math.floor(rawValue);
+		// 		fracElem.style.width = `${frac * 100}%`;
+		// 		fracElem.style.opacity = String(mapRange(frac, 0, 1, 1, 0.2));
+		// 		dotElem.appendChild(fracElem);
+		// 	}
 
-			this.dotElems_.push(dotElem);
-			this.element.appendChild(dotElem);
-		}
+		// 	this.dotElems_.push(dotElem);
+		// 	this.element.appendChild(dotElem);
+		// }
 	}
 
 	private onValueChange_() {

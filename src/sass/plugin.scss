@@ -6,11 +6,11 @@
 	// Extend a general input view style
 	@extend %input;
 
-	cursor: pointer;
-	display: grid;
-	grid-template-columns: repeat(10, 1fr);
-	grid-template-rows: repeat(auto-fit, 10px);
-	height: calc(var(--bld-us) * 3);
+	//cursor: pointer;
+	display: block;
+	//grid-template-columns: repeat(10, 1fr);
+	//grid-template-rows: repeat(auto-fit, 10px);
+	height: calc(var(--bld-us) * 4);
 	overflow: hidden;
 	position: relative;
 
