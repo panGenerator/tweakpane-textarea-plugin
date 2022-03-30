@@ -1,7 +1,7 @@
 {
-  "name": "tweakpane-plugin-template",
+  "name": "tweakpane-textarea-plugin",
   "version": "0.0.0",
-  "description": "Plugin template for Tweakpane",
+  "description": "Textarea plugin for Tweakpane",
   "main": "dist/tweakpane-plugin-template.js",
   "types": "dist/types/index.d.ts",
   "author": "cocopon",

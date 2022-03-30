@@ -1,4 +1,4 @@
-import {ClassName, mapRange, Value, View, ViewProps} from '@tweakpane/core';
+import {ClassName, Value, View, ViewProps} from '@tweakpane/core';
 
 interface Config {
 	value: Value<string>;
@@ -7,7 +7,7 @@ interface Config {
 
 // Create a class name generator from the view name
 // ClassName('tmp') will generate a CSS class name like `tp-tmpv`
-const className = ClassName('tmp');
+const className = ClassName('txtr');
 
 // Custom view class should implement `View` interface
 export class PluginView implements View {
@@ -32,15 +32,15 @@ export class PluginView implements View {
 		// this.textElem_ = doc.createElement('div');
 		// this.textElem_.classList.add(className('text'));
 		// this.element.appendChild(this.textElem_);
-		
+
 		const inputElem = doc.createElement('textarea');
 		inputElem.rows = 6;
 		inputElem.cols = 22;
 		inputElem.placeholder = "test..."
 		inputElem.classList.add(className('i'));
-		
+
 		//inputElem.addEventListener( "keyup", this.textChanged )
-		
+
 		//config.viewProps.bindDisabled(inputElem);
 		this.element.appendChild(inputElem);
 		this.inputElement = inputElem;
@@ -53,7 +53,7 @@ export class PluginView implements View {
 			console.log('TODO: dispose view');
 		});
 	}
-	
+
 	// private textChanged( ev:KeyboardEvent ) : void {
 	// 	//console.log( "key event" )
 	// }

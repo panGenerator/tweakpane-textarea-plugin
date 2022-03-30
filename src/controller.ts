@@ -40,17 +40,17 @@ export class PluginController implements Controller<PluginView> {
 		});
 
 		this.view.inputElement.onkeyup = () => { this.textChanged() };
-		
+
 		// You can use `PointerHandler` to handle pointer events in the same way as Tweakpane do
 		//const ptHandler = new PointerHandler(this.view.element);
 		// ptHandler.emitter.on('down', this.onPoint_);
 		// ptHandler.emitter.on('move', this.onPoint_);
 		// ptHandler.emitter.on('up', this.onPoint_);
-		
+
 		//setInterval( () => { this.updt() }, 1000 )
-		
+
 	}
-	
+
 	private textChanged(){
 		this.value.rawValue = this.view.inputElement.value;
 	}
