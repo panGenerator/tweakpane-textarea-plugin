@@ -34,7 +34,7 @@ export class PluginView implements View {
 		// this.element.appendChild(this.textElem_);
 
 		const inputElem = doc.createElement('textarea');
-		inputElem.rows = 5;
+		inputElem.rows = 4;
 		inputElem.cols = 22;
 		inputElem.placeholder = 'Enter text here';
 		inputElem.classList.add(className('i'));

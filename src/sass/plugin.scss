@@ -6,7 +6,7 @@
 	// Extend a general input view style
 	@extend %input;
 	display: block;
-	height: calc(var(--bld-us) * 4);
+	height: calc(var(--bld-us) * 3);
 	overflow: hidden;
 	position: relative;
 
@@ -22,7 +22,7 @@
 		color: var(--in-fg);
 		font-size: 11px;
 		padding: 4px;
-		//line-height: var(--bld-us);
+		line-height: 16px;
 		min-width: 0;
 		width: 100%;
 		border: none;
