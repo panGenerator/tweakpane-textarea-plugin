@@ -5,11 +5,7 @@
 .#{$prefix}-txtrv {
 	// Extend a general input view style
 	@extend %input;
-
-	//cursor: pointer;
 	display: block;
-	//grid-template-columns: repeat(10, 1fr);
-	//grid-template-rows: repeat(auto-fit, 10px);
 	height: calc(var(--bld-us) * 4);
 	overflow: hidden;
 	position: relative;
@@ -18,26 +14,14 @@
 		opacity: 0.5;
 	}
 
-	// &_text {
-	// 	// You can use CSS variables for styling. See declarations for details:
-	// 	// ../../node_modules/@tweakpane/core/lib/sass/common/_defs.scss
-	// 	color: var(--in-fg);
-	// 	bottom: 2px;
-	// 	font-size: 0.9em;
-	// 	line-height: 0.9;
-	// 	opacity: 0.5;
-	// 	position: absolute;
-	// 	right: 2px;
-	// }
-
 	.tp-txtrv_i {
 		font-family: var(--font-family);
 		background-color: var(--in-bg);
 		border-radius: var(--elm-br);
 		box-sizing: border-box;
 		color: var(--in-fg);
-		// font-size: 0.9em;
-		padding: 0 4px;
+		font-size: 11px;
+		padding: 4px;
 		//line-height: var(--bld-us);
 		min-width: 0;
 		width: 100%;
