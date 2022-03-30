@@ -1,11 +1,4 @@
-import {
-	constrainRange,
-	Controller,
-	PointerHandler,
-	PointerHandlerEvent,
-	Value,
-	ViewProps,
-} from '@tweakpane/core';
+import {Controller, Value, ViewProps} from '@tweakpane/core';
 
 import {PluginView} from './view';
 

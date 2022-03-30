@@ -26,7 +26,7 @@ export class PluginView implements View {
 		// Receive the bound value from the controller
 		this.value_ = config.value;
 		// Handle 'change' event of the value
-		this.value_.emitter.on('change', this.onValueChange_.bind(this));
+		//this.value_.emitter.on('change', this.onValueChange_.bind(this));
 
 		// Create child elements
 		// this.textElem_ = doc.createElement('div');
@@ -34,9 +34,9 @@ export class PluginView implements View {
 		// this.element.appendChild(this.textElem_);
 
 		const inputElem = doc.createElement('textarea');
-		inputElem.rows = 6;
+		inputElem.rows = 5;
 		inputElem.cols = 22;
-		inputElem.placeholder = "test..."
+		inputElem.placeholder = 'Enter text here';
 		inputElem.classList.add(className('i'));
 
 		//inputElem.addEventListener( "keyup", this.textChanged )
@@ -46,7 +46,7 @@ export class PluginView implements View {
 		this.inputElement = inputElem;
 
 		// Apply the initial value
-		this.refresh_();
+		// this.refresh_();
 
 		config.viewProps.handleDispose(() => {
 			// Called when the view is disposing
@@ -58,8 +58,8 @@ export class PluginView implements View {
 	// 	//console.log( "key event" )
 	// }
 
-	private refresh_(): void {
-		const rawValue = this.value_.rawValue;
+	// private refresh_(): void {
+	// 	const rawValue = this.value_.rawValue;
 
 		// this.textElem_.textContent = rawValue.toFixed(2);
 
@@ -88,9 +88,9 @@ export class PluginView implements View {
 		// 	this.dotElems_.push(dotElem);
 		// 	this.element.appendChild(dotElem);
 		// }
-	}
+	// }
 
-	private onValueChange_() {
-		this.refresh_();
-	}
+	// private onValueChange_() {
+	// 	this.refresh_();
+	// }
 }

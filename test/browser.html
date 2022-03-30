@@ -6,19 +6,18 @@
 </head>
 <body>
 	<script src="../node_modules/tweakpane/dist/tweakpane.js"></script>
-	<script src="../dist/tweakpane-plugin-template.js"></script>
+	<script src="../dist/tweakpane-textarea-plugin.js"></script>
 	<script>
 		const params = {
-			prop: 3,
+			prop: 'text',
 		};
 		const pane = new Tweakpane.Pane();
 
 		// Register plugin
-		pane.registerPlugin(TweakpaneTemplatePlugin);
+		pane.registerPlugin(TweakpaneTextareaPlugin);
 
-		// TODO: Update parameters for your plugin
 		pane.addInput(params, 'prop', {
-			view: 'dots',
+			view: 'textarea',
 		}).on('change', (ev) => {
 			console.log(ev.value);
 		});

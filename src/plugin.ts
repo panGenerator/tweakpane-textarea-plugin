@@ -1,9 +1,6 @@
 import {
 	BaseInputParams,
 	BindingTarget,
-	CompositeConstraint,
-	createRangeConstraint,
-	createStepConstraint,
 	InputBindingPlugin,
 	ParamsParsers,
 	parseParams,
