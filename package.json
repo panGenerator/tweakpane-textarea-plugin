@@ -1,6 +1,6 @@
 {
   "name": "tweakpane-textarea-plugin",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Textarea plugin for Tweakpane",
   "main": "dist/tweakpane-textarea-plugin.js",
   "types": "dist/types/index.d.ts",
@@ -55,5 +55,8 @@
   },
   "peerDependencies": {
     "tweakpane": "^3.0.5"
+  },
+  "dependencies": {
+    "tweakpane-textarea-plugin": "github:panGenerator/tweakpane-textarea-plugin"
   }
 }
