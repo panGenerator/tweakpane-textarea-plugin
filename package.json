@@ -1,6 +1,6 @@
 {
   "name": "tweakpane-textarea-plugin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Textarea plugin for Tweakpane",
   "main": "dist/tweakpane-textarea-plugin.js",
   "types": "dist/types/index.d.ts",

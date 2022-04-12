@@ -6,7 +6,7 @@ import {
 	parseParams,
 } from '@tweakpane/core';
 
-import {PluginController} from './controller';
+import {TextAreaController} from './controller';
 
 export interface PluginInputParams extends BaseInputParams {
 	view: 'textarea';
@@ -77,9 +77,9 @@ export const TweakpaneTextareaPlugin: InputBindingPlugin<
 
 	controller(args) {
 		// Create a controller for the plugin
-		return new PluginController(args.document, {
+		return new TextAreaController(args.document, {
 			value: args.value,
-			viewProps: args.viewProps,
+			viewProps: args.viewProps
 		});
 	},
 };

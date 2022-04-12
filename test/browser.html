@@ -5,6 +5,7 @@
 	<title></title>
 </head>
 <body>
+	<button id="update">UPDATE</button>
 	<script src="../node_modules/tweakpane/dist/tweakpane.js"></script>
 	<script src="../dist/tweakpane-textarea-plugin.js"></script>
 	<script>
@@ -23,6 +24,15 @@
 		});
 
 		window.pane = pane;
+		document.getElementById('update').addEventListener('click', ()=>
+		{
+			pane.importPreset({prop:Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)})
+			params.prop = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)
+			console.log(params)
+		}
+		)
+
 	</script>
+
 </body>
 </html>
