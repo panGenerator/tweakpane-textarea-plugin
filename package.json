@@ -1,5 +1,5 @@
 {
-  "name": "@panGenerator/tweakpane-textarea-plugin",
+  "name": "@pangenerator/tweakpane-textarea-plugin",
   "version": "0.1.10",
   "description": "Textarea plugin for Tweakpane",
   "main": "dist/tweakpane-textarea-plugin.js",
