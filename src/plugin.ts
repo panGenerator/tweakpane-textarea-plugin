@@ -79,7 +79,7 @@ export const TweakpaneTextareaPlugin: InputBindingPlugin<
 		// Create a controller for the plugin
 		return new TextAreaController(args.document, {
 			value: args.value,
-			viewProps: args.viewProps
+			viewProps: args.viewProps,
 		});
 	},
 };
