@@ -1,12 +1,17 @@
 {
   "name": "@pangenerator/tweakpane-textarea-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Textarea plugin for Tweakpane",
   "main": "dist/tweakpane-textarea-plugin.js",
   "types": "dist/types/index.d.ts",
   "author": "panGenerator <contact@pangenerator.com>",
   "license": "MIT",
-  "keywords": ["tweakpane", "tweakpane-plugin", "plugin", "textarea"],
+  "keywords": [
+    "tweakpane",
+    "tweakpane-plugin",
+    "plugin",
+    "textarea"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/panGenerator/tweakpane-textarea-plugin.git"
