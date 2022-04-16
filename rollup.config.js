@@ -55,12 +55,9 @@ function getPlugins(css, shouldMinify) {
 }
 
 function getDistName(packageName) {
-	// `@tweakpane/plugin-foobar` -> `tweakpane-plugin-foobar`
-	// `tweakpane-plugin-foobar`  -> `tweakpane-plugin-foobar`
-	return packageName
-		.split(/[@/-]/)
-		.reduce((comps, comp) => (comp !== '' ? [...comps, comp] : comps), [])
-		.join('-');
+	return packageName.split('/')[1];
+	// .reduce((comps, comp) => (comp !== '' ? [...comps, comp] : comps), [])
+	// .join('-');
 }
 
 function getUmdName(packageName) {
@@ -68,6 +65,7 @@ function getUmdName(packageName) {
 	// `tweakpane-plugin-foobar`  -> `TweakpaneFoobarPlugin`
 	return (
 		packageName
+			.split('/')[1]
 			.split(/[@/-]/)
 			.map((comp) =>
 				comp !== 'plugin' ? comp.charAt(0).toUpperCase() + comp.slice(1) : '',
