@@ -20,7 +20,7 @@ Simple textarea plugin for [Tweakpane][tweakpane].
 
 ```js
 import {Pane} from 'tweakpane';
-import * as TextareaPlugin from '@panGenerator/tweakpane-textarea-plugin';
+import * as TextareaPlugin from '@pangenerator/tweakpane-textarea-plugin';
 
 const pane = new Pane();
 pane.registerPlugin(TextareaPlugin);
