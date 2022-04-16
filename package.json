@@ -6,6 +6,10 @@
   "types": "dist/types/index.d.ts",
   "author": "panGenerator",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panGenerator/tweakpane-textarea-plugin.git"
+  },
   "files": [
     "dist"
   ],
