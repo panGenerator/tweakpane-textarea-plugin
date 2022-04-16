@@ -2,7 +2,7 @@
 [![Version](http://img.shields.io/npm/v/@pangenerator/tweakpane-textarea-plugin.svg)](https://www.npmjs.org/package/@pangenerator/tweakpane-textarea-plugin)
 
 Simple textarea (multiline text input) plugin for [Tweakpane][tweakpane].\
-![image](multiline.gif)
+![image](multiline2.gif)
 
 ## Installation
 
