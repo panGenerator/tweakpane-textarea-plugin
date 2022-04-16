@@ -6,6 +6,10 @@ Simple textarea (multiline text input) plugin for [Tweakpane][tweakpane].\
 
 ## Installation
 
+### NPM
+
+`npm i @pangenerator/tweakpane-textarea-plugin`
+
 ### Browser
 
 ```html
