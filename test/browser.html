@@ -12,7 +12,7 @@
 
 		// Object with multiline text property
 		const params = {
-			text: 'Line1\nLine2\nLine3',
+			prop: 'Line1\nLine2\nLine3',
 		};
 
 		// Create the panel
@@ -23,7 +23,7 @@
 		pane.registerPlugin(TweakpaneTextareaPlugin);
 
 		// Add text area input
-		pane.addInput(params, 'text', {
+		pane.addInput(params, 'prop', {
 			view: 'textarea',
 		}).on('change', (ev) => {
 			console.log( ev.value );
@@ -36,7 +36,7 @@
 
 		btn.on('click', () => {
 			let content = Array.from(Array(3), (d,i) => (i+1) + ' ' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10) ).join('\n')
-			params.text = content
+			params.prop = content
 			pane.refresh()
 			console.log(params)
 		});
