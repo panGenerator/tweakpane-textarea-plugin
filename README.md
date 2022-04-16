@@ -1,4 +1,5 @@
 # Textarea plugin for Tweakpane
+[![Version](http://img.shields.io/npm/v/@pangenerator/tweakpane-textarea-plugin.svg)](https://www.npmjs.org/package/@pangenerator/tweakpane-textarea-plugin)
 
 Simple textarea plugin for [Tweakpane][tweakpane].
 
