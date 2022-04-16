@@ -32,7 +32,7 @@ pane.registerPlugin(TextareaPlugin);
 
 ```js
 const params = {
-  prop: 'Put your \nmultiline \ntext here!'
+  prop: 'Put your\nmultiline\ntext here!'
 };
 
 pane.addInput(params, 'prop', {
