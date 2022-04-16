@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Text Area Plugin Test</title>
 </head>
-<body>
-	<div id="output" style="white-space: pre-line" >Type in the text area to refresh content...</div>
-	<button id="update">RANDOMIZE CONTENT</button><br>
+<body style="background-color: rgb(203, 203, 203);">
+	<div id="output" style="white-space: pre-line" >Type in the text area to refresh content live...</div>
 	<script src="../node_modules/tweakpane/dist/tweakpane.js"></script>
 	<script src="../dist/tweakpane-textarea-plugin.js"></script>
 	<script>
+
+		// Object with multiline text property
 		const params = {
 			text: 'Line1\nLine2\nLine3',
 		};
+
+		// Create the panel
 		const pane = new Tweakpane.Pane();
+		window.pane = pane;
 
 		// Register plugin
 		pane.registerPlugin(TweakpaneTextareaPlugin);
 
+		// Add text area input
 		pane.addInput(params, 'text', {
 			view: 'textarea',
 		}).on('change', (ev) => {
@@ -25,15 +30,16 @@
 			document.getElementById('output').textContent = ev.value
 		});
 
-		window.pane = pane;
-		document.getElementById('update').addEventListener('click', () =>
-			{
-				let content = Array.from(Array(3), (d,i) => (i+1) + ' ' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10) ).join('\n')
-				params.text = content
-				pane.refresh()
-				console.log(params)
-			}
-		)
+		const btn = pane.addButton({
+			title: 'Randomize',
+		});
+
+		btn.on('click', () => {
+			let content = Array.from(Array(3), (d,i) => (i+1) + ' ' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10) ).join('\n')
+			params.text = content
+			pane.refresh()
+			console.log(params)
+		});
 
 	</script>
 
