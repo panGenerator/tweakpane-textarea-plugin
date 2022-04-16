@@ -10,14 +10,14 @@
 	<script src="../dist/tweakpane-textarea-plugin.js"></script>
 	<script>
 		const params = {
-			prop: 'Test\nTest\nTest',
+			text_area: 'Line1\nLine2\nLine3',
 		};
 		const pane = new Tweakpane.Pane();
 
 		// Register plugin
 		pane.registerPlugin(TweakpaneTextareaPlugin);
 
-		pane.addInput(params, 'prop', {
+		pane.addInput(params, 'text_area', {
 			view: 'textarea',
 		}).on('change', (ev) => {
 			console.log(ev.value);
@@ -25,11 +25,11 @@
 
 		window.pane = pane;
 		document.getElementById('update').addEventListener('click', ()=>
-		{
-			pane.importPreset({prop:Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)})
-			params.prop = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)
-			console.log(params)
-		}
+			{
+				pane.importPreset({text_area:Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)})
+				params.text_area = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)
+				console.log(params)
+			}
 		)
 
 	</script>
