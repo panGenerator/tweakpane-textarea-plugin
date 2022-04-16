@@ -56,8 +56,5 @@
   },
   "peerDependencies": {
     "tweakpane": "^3.0.5"
-  },
-  "publishConfig": {
-    "@panGenerator:registry": "https://npm.pkg.github.com"
   }
 }
