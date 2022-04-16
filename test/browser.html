@@ -26,8 +26,8 @@
 		window.pane = pane;
 		document.getElementById('update').addEventListener('click', ()=>
 			{
-				pane.importPreset({text_area:Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)})
 				params.text_area = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)
+				pane.refresh()
 				console.log(params)
 			}
 		)
