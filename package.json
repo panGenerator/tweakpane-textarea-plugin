@@ -10,7 +10,8 @@
     "tweakpane",
     "tweakpane-plugin",
     "plugin",
-    "textarea"
+    "textarea",
+    "multiline"
   ],
   "repository": {
     "type": "git",
