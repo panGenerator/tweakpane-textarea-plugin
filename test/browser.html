@@ -5,28 +5,31 @@
 	<title></title>
 </head>
 <body>
-	<button id="update">UPDATE</button>
+	<div id="output" style="white-space: pre-line" >Type in the text area to refresh content...</div>
+	<button id="update">RANDOMIZE CONTENT</button><br>
 	<script src="../node_modules/tweakpane/dist/tweakpane.js"></script>
 	<script src="../dist/tweakpane-textarea-plugin.js"></script>
 	<script>
 		const params = {
-			text_area: 'Line1\nLine2\nLine3',
+			text: 'Line1\nLine2\nLine3',
 		};
 		const pane = new Tweakpane.Pane();
 
 		// Register plugin
 		pane.registerPlugin(TweakpaneTextareaPlugin);
 
-		pane.addInput(params, 'text_area', {
+		pane.addInput(params, 'text', {
 			view: 'textarea',
 		}).on('change', (ev) => {
-			console.log(ev.value);
+			console.log( ev.value );
+			document.getElementById('output').textContent = ev.value
 		});
 
 		window.pane = pane;
-		document.getElementById('update').addEventListener('click', ()=>
+		document.getElementById('update').addEventListener('click', () =>
 			{
-				params.text_area = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10)
+				let content = Array.from(Array(3), (d,i) => (i+1) + ' ' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10) ).join('\n')
+				params.text = content
 				pane.refresh()
 				console.log(params)
 			}
