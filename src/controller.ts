@@ -35,10 +35,17 @@ export class TextAreaController implements Controller<TextAreaView> {
 		this.view.inputElement.addEventListener('keyup', this.onInputChange_);
 	}
 
-	private onInputChange_(e: Event): void {
-		const inputElem: HTMLInputElement = forceCast(e.currentTarget);
-		const value = inputElem.value;
-		this.value.rawValue = value;
-		this.view.refresh();
+	private onInputChange_(e: KeyboardEvent): void {
+
+		//console.log( e.key )
+
+		//if( e.key === 'Enter' ){
+			const inputElem: HTMLInputElement = forceCast(e.currentTarget);
+			const value = inputElem.value;
+			this.value.rawValue = value;
+			this.view.refresh();
+		//}
+
+		
 	}
 }

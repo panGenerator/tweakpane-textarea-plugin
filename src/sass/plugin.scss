@@ -1,12 +1,14 @@
 // Import core styles
 @import '../../node_modules/@tweakpane/core/lib/sass/plugin';
 
+
 // Additional style for the plugin
 .#{$prefix}-txtrv {
 	// Extend a general input view style
 	@extend %input;
 	display: block;
 	height: auto; //calc(var(--bld-us) * 4)
+	//margin-bottom: -5px;
 	overflow: hidden;
 	position: relative;
 
