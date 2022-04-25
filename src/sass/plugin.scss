@@ -6,7 +6,7 @@
 	// Extend a general input view style
 	@extend %input;
 	display: block;
-	height: calc(var(--bld-us) * 3);
+	height: auto; //calc(var(--bld-us) * 4)
 	overflow: hidden;
 	position: relative;
 

@@ -3,6 +3,7 @@ import {ClassName, Value, View, ViewProps} from '@tweakpane/core';
 interface Config {
 	value: Value<string>;
 	viewProps: ViewProps;
+	lineCount: number;
 }
 
 const className = ClassName('txtr');
@@ -22,7 +23,7 @@ export class TextAreaView implements View {
 		//this.onChange_ = this.onChange_.bind(this);
 
 		const inputElem = doc.createElement('textarea');
-		inputElem.rows = 4;
+		inputElem.rows = config.lineCount;
 		inputElem.cols = 22;
 		inputElem.placeholder = 'Enter text here';
 		inputElem.classList.add(className('i'));
