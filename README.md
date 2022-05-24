@@ -41,6 +41,7 @@ const params = {
 
 pane.addInput(params, 'prop', {
   view: 'textarea',
+  placeholder: 'Type here...'
 }).on('change', (ev) => {
   console.log(ev.value);
 });

@@ -4,6 +4,7 @@ interface Config {
 	value: Value<string>;
 	viewProps: ViewProps;
 	lineCount: number;
+	placeholder: string;
 }
 
 const className = ClassName('txtr');
@@ -25,7 +26,7 @@ export class TextAreaView implements View {
 		const inputElem = doc.createElement('textarea');
 		inputElem.rows = config.lineCount;
 		inputElem.cols = 22;
-		inputElem.placeholder = 'Enter text here';
+		inputElem.placeholder = config.placeholder;
 		inputElem.classList.add(className('i'));
 
 		config.viewProps.bindDisabled(inputElem);

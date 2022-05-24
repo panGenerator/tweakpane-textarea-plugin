@@ -25,7 +25,8 @@
 		// Add text area input
 		pane.addInput(params, 'prop', {
 			view: 'textarea',
-			lineCount: 6
+			lineCount: 6,
+			placeholder: 'Type here...',
 		}).on('change', (ev) => {
 			console.log( ev.value );
 			document.getElementById('output').textContent = ev.value

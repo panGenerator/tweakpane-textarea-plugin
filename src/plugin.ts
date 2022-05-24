@@ -11,6 +11,7 @@ import {TextAreaController} from './controller';
 export interface PluginInputParams extends BaseInputParams {
 	view: 'textarea';
 	lineCount?: number;
+	placeholder?: string;
 }
 
 // NOTE: You can see JSDoc comments of `InputBindingPlugin` for details about each property
@@ -43,12 +44,13 @@ export const TweakpaneTextareaPlugin: InputBindingPlugin<
 		}
 
 		// Parse parameters object
-		console.log( params)
+		// console.log(params)
 		const p = ParamsParsers;
 		const result = parseParams<PluginInputParams>(params, {
 			// `view` option may be useful to provide a custom control for primitive values
 			view: p.required.constant('textarea'),
-			lineCount: p.optional.number
+			lineCount: p.optional.number,
+			placeholder: p.optional.string
 		});
 		if (!result) {
 			return null;
@@ -83,6 +85,7 @@ export const TweakpaneTextareaPlugin: InputBindingPlugin<
 		return new TextAreaController(args.document, {
 			value: args.value,
 			lineCount: args.params.lineCount ?? 3,
+			placeholder: args.params.placeholder ?? 'Enter text here',
 			viewProps: args.viewProps,
 		});
 	},
