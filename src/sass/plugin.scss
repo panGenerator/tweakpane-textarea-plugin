@@ -9,6 +9,7 @@
 	display: block;
 	height: auto; //calc(var(--bld-us) * 4)
 	//margin-bottom: -5px;
+	padding-bottom: 0;
 	overflow: hidden;
 	position: relative;
 
@@ -30,6 +31,7 @@
 		border: none;
 		height: 100%;
 		resize: none;
+		margin-bottom: -8px;
 	}
 	.tp-txtrv_i:focus {
 		outline: none;
