@@ -1,6 +1,6 @@
-import { Controller, forceCast, Value, ViewProps } from '@tweakpane/core';
+import {Controller, forceCast, Value, ViewProps} from '@tweakpane/core';
 
-import { TextAreaView } from './view';
+import {TextAreaView} from './view';
 /**
  * @hidden
  */

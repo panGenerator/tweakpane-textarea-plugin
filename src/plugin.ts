@@ -50,7 +50,7 @@ export const TweakpaneTextareaPlugin: InputBindingPlugin<
 			// `view` option may be useful to provide a custom control for primitive values
 			view: p.required.constant('textarea'),
 			lineCount: p.optional.number,
-			placeholder: p.optional.string
+			placeholder: p.optional.string,
 		});
 		if (!result) {
 			return null;
