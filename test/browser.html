@@ -6,9 +6,9 @@
 </head>
 <body style="background-color: rgb(203, 203, 203);">
 	<div id="output" style="white-space: pre-line" >Type in the text area to refresh content live...</div>
-	<script src="../node_modules/tweakpane/dist/tweakpane.js"></script>
-	<script src="../dist/tweakpane-textarea-plugin.js"></script>
-	<script>
+	<script type="module">
+		import * as Tweakpane from '../node_modules/tweakpane/dist/tweakpane.js';
+		import * as TweakpaneTextareaPlugin from '../dist/tweakpane-textarea-plugin.js';
 
 		// Object with multiline text property
 		const params = {
@@ -23,9 +23,9 @@
 		pane.registerPlugin(TweakpaneTextareaPlugin);
 
 		// Add text area input
-		pane.addInput(params, 'prop', {
+		pane.addBinding(params, 'prop', {
 			view: 'textarea',
-			lineCount: 6,
+			rows: 6,
 			placeholder: 'Type here...',
 		}).on('change', (ev) => {
 			console.log( ev.value );

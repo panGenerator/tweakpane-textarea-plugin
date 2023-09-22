@@ -1,13 +1,13 @@
 import {Controller, forceCast, Value, ViewProps} from '@tweakpane/core';
 
-import {TextAreaView} from './view';
+import {TextAreaView} from './view.js';
 /**
  * @hidden
  */
 export interface Config {
 	value: Value<string>;
 	viewProps: ViewProps;
-	lineCount: number;
+	rows: number;
 	placeholder: string;
 }
 
@@ -18,22 +18,22 @@ export class TextAreaController implements Controller<TextAreaView> {
 	public readonly value: Value<string>;
 	public readonly view: TextAreaView;
 	public readonly viewProps: ViewProps;
-	public readonly lineCount: number;
+	public readonly rows: number;
 	public readonly placeholder: string;
 
 	constructor(doc: Document, config: Config) {
 		this.onInputChange_ = this.onInputChange_.bind(this);
 		this.value = config.value;
 		this.viewProps = config.viewProps;
-		this.lineCount = config.lineCount;
+		this.rows = config.rows;
 		this.placeholder = config.placeholder;
 
-		// console.log( this.lineCount )
+		// console.log( this.rows )
 
 		this.view = new TextAreaView(doc, {
 			value: this.value,
 			viewProps: this.viewProps,
-			lineCount: this.lineCount,
+			rows: this.rows,
 			placeholder: this.placeholder,
 		});
 		this.view.inputElement.addEventListener('keyup', this.onInputChange_);

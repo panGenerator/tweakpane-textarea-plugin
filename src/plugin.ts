@@ -1,16 +1,16 @@
 import {
 	BaseInputParams,
 	BindingTarget,
+	createPlugin,
 	InputBindingPlugin,
-	ParamsParsers,
-	parseParams,
+	parseRecord,
 } from '@tweakpane/core';
 
-import {TextAreaController} from './controller';
+import {TextAreaController} from './controller.js';
 
-export interface PluginInputParams extends BaseInputParams {
+export interface TextareaPluginInputParams extends BaseInputParams {
 	view: 'textarea';
-	lineCount?: number;
+	rows?: number;
 	placeholder?: string;
 }
 
@@ -24,18 +24,10 @@ export interface PluginInputParams extends BaseInputParams {
 export const TweakpaneTextareaPlugin: InputBindingPlugin<
 	string,
 	string,
-	PluginInputParams
-> = {
+	TextareaPluginInputParams
+> = createPlugin({
 	id: 'input-template',
-
-	// type: The plugin type.
-	// - 'input': Input binding
-	// - 'monitor': Monitor binding
 	type: 'input',
-
-	// This plugin template injects a compiled CSS by @rollup/plugin-replace
-	// See rollup.config.js for details
-	css: '__css__',
 
 	accept(exValue: unknown, params: Record<string, unknown>) {
 		if (typeof exValue !== 'string') {
@@ -45,13 +37,12 @@ export const TweakpaneTextareaPlugin: InputBindingPlugin<
 
 		// Parse parameters object
 		// console.log(params)
-		const p = ParamsParsers;
-		const result = parseParams<PluginInputParams>(params, {
+		const result = parseRecord<TextareaPluginInputParams>(params, (p) => ({
 			// `view` option may be useful to provide a custom control for primitive values
 			view: p.required.constant('textarea'),
-			lineCount: p.optional.number,
+			rows: p.optional.number,
 			placeholder: p.optional.string,
-		});
+		}));
 		if (!result) {
 			return null;
 		}
@@ -84,9 +75,9 @@ export const TweakpaneTextareaPlugin: InputBindingPlugin<
 		// Create a controller for the plugin
 		return new TextAreaController(args.document, {
 			value: args.value,
-			lineCount: args.params.lineCount ?? 3,
+			rows: args.params.rows ?? 3,
 			placeholder: args.params.placeholder ?? 'Enter text here',
 			viewProps: args.viewProps,
 		});
 	},
-};
+});
