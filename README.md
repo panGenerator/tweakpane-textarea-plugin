@@ -39,9 +39,9 @@ const params = {
   prop: 'Put your\nmultiline\ntext here!'
 };
 
-pane.addInput(params, 'prop', {
+pane.addBinding(params, 'prop', {
   view: 'textarea',
-  lineCount: 6,
+  rows: 6,
   placeholder: 'Type here...'
 }).on('change', (ev) => {
   console.log(ev.value);

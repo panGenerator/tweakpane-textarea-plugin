@@ -1,28 +1,27 @@
 // Import core styles
-@import '../../node_modules/@tweakpane/core/lib/sass/plugin';
-
+@use '../../node_modules/@tweakpane/core/lib/sass/tp';
 
 // Additional style for the plugin
-.#{$prefix}-txtrv {
+.#{tp.$prefix}-txtrv {
 	// Extend a general input view style
-	@extend %input;
+	@extend %tp-input;
 	display: block;
-	height: auto; //calc(var(--bld-us) * 4)
+	height: auto; //calc(#{tp.cssVar('container-unit-size')} * 4)
 	//margin-bottom: -5px;
 	padding-bottom: 0;
 	overflow: hidden;
 	position: relative;
 
-	&.#{$prefix}-v-disabled {
+	&.#{tp.$prefix}-v-disabled {
 		opacity: 0.5;
 	}
 
 	.tp-txtrv_i {
 		font-family: var(--font-family);
-		background-color: var(--in-bg);
-		border-radius: var(--elm-br);
+		background-color: tp.cssVar('input-bg');
+		border-radius: tp.cssVar('blade-border-radius');
 		box-sizing: border-box;
-		color: var(--in-fg);
+		color: tp.cssVar('input-fg');
 		font-size: 11px;
 		padding: 4px;
 		line-height: 16px;
